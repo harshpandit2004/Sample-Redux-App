@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import Navbar from "./Components/Navbar";
+
 import { useSelector, useDispatch } from "react-redux";
 import { inc, dec } from "./Features/Counter/counterSlice";
 
@@ -9,11 +11,14 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="navbar">
+        <Navbar />
+      </div>
+      <div className="App-header">
         <button onClick={() => dispatch(dec())}>decrement</button>
         <label>{counterVal}</label>
         <button onClick={() => dispatch(inc())}>increment</button>
-      </header>
+      </div>
     </div>
   );
 }
